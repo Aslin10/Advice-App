@@ -4,7 +4,7 @@ import pauseDesktop from './images/pattern-divider-desktop.svg';
 import pauseMobile from './images/pattern-divider-mobile.svg';
 import iconDice from'./images/icon-dice.svg';
 
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 
 export const App = () => {
   const[advice,setAdvice]=useState("");
@@ -16,6 +16,11 @@ setAdvice(data.slip.advice);
 setCount((c)=>c+1);
 
     }
+    useEffect(function() {
+    
+      getAdvice();
+        
+      },[]);
 
   return (
     <div className='container'>
